@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+body {
+  background: #000008;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+}
+
+.wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+/* プロフィールカード */
+.profile {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 2px solid #1d9bf0;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+
+.profile-icon {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  background-image: url("../SVG/icon.svg");
+}
+
+.profile-text h1 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.profile-text h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #1d9bf0;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.profile-text p {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+a {
+  color: #1d9bf0;             
+  text-decoration: none;   
+}
+a,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* リンク群 */
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  grid-auto-rows: 1fr;
+}
+
+/* デフォルト：正方形 */
+.link {
+  background: #000000;
+  border-radius: 16px;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.link:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+/* 縦に2マス */
+.link.tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+/* 横に2マス */
+.link.wide {
+  grid-column: span 2;
+  aspect-ratio: auto;
+}
+
+
+/* 各種リンク画像 */
+
+.link.tumblr {
+  background-image: url("../SVG/site2.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link.twitter {
+  background-image: url("../SVG/mail.svg");
+}
+
+.link.mail {
+  background-image: url("../SVG/twitter.svg");
+}
+
+.link.skima {
+  background-image: url("../SVG/skima.svg");
+    background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.link.booth {
+  background-image: url("../SVG/booth.svg");
+    background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link.wavebox {
+  background-image: url("../SVG/wavebox2.svg");
+}
+
+
+
+
+/* モバイル微調整 */
+@media (max-width: 360px) {
+  .links a:last-child {
+    grid-column: 3;
+  }
+  .profile-icon{
+     max-width: 80px;
+     background-repeat: no-repeat;
+background-size: contain; /* or contain */
+
+  }
+}
+
+
+@media (min-width: 900px) {
+  .wrapper {
+    max-width: 880px; /* ←少し締める */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; /* ←全体的に圧縮 */
+    padding: 40px 24px;
+  }
+
+  /* プロフィール柱（正方形2個分） */
+  .profile {
+    grid-column: 1 / 2;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+
+    aspect-ratio: 1 / 2;
+    border: 2px solid #1d9bf0;
+    border-radius: 20px;
+    padding: 12px;
+  }
+
+  .profile-icon {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+  }
+
+  .profile-text h1 {
+    font-size: 1rem;
+  }
+
+  .profile-text p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* リンク群 */
+  .links {
+    grid-column: 2 / 5;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .link {
+    border-radius: 14px;
+  }
+}
+
+
+@media (max-width: 899px) {
+  /* プロフィールカード：横3 × 縦1 */
+  .profile {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+
+    aspect-ratio: 3 / 1;
+    width: 100%;
+
+    border: 2px solid #1d9bf0;
+    border-radius: 20px;
+    padding: 12px 16px;
+  }
+
+  /* 仮アイコン：完全な正方形 */
+  .profile-icon {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+
+  /* テキストは残り幅を使う */
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-text h1 {
+    font-size: 1rem;
+  }
+
+  .profile-text p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
