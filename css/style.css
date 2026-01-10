@@ -18,7 +18,6 @@ body {
   padding: 32px 20px 48px;
 }
 
-/* プロフィールカード */
 .profile {
   display: flex;
   gap: 16px;
@@ -68,8 +67,6 @@ a:visited {
   text-decoration: none;
 }
 
-
-/* リンク群 */
 .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -77,7 +74,6 @@ a:visited {
   grid-auto-rows: 1fr;
 }
 
-/* デフォルト：正方形 */
 .link {
   background: #000000;
   border-radius: 16px;
@@ -90,13 +86,11 @@ a:visited {
   opacity: 0.9;
 }
 
-/* 縦に2マス */
 .link.tall {
   grid-row: span 2;
   aspect-ratio: auto;
 }
 
-/* 横に2マス */
 .link.wide {
   grid-column: span 2;
   aspect-ratio: auto;
@@ -104,7 +98,6 @@ a:visited {
 
 
 /* 各種リンク画像 */
-
 .link.tumblr {
   background-image: url("../SVG/site2.svg");
   background-size: contain;
@@ -150,23 +143,21 @@ a:visited {
   .profile-icon{
      max-width: 80px;
      background-repeat: no-repeat;
-background-size: contain; /* or contain */
-
+     background-size: contain; 
   }
 }
 
 
 @media (min-width: 900px) {
   .wrapper {
-    max-width: 880px; /* ←少し締める */
+    max-width: 880px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px; /* ←全体的に圧縮 */
+    gap: 12px;
     padding: 40px 24px;
   }
 
-  /* プロフィール柱（正方形2個分） */
   .profile {
     grid-column: 1 / 2;
 
@@ -209,7 +200,6 @@ background-size: contain; /* or contain */
 
 
 @media (max-width: 899px) {
-  /* プロフィールカード：横3 × 縦1 */
   .profile {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -223,15 +213,13 @@ background-size: contain; /* or contain */
     padding: 12px 16px;
   }
 
-  /* 仮アイコン：完全な正方形 */
   .profile-icon {
     height: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 14px;
     flex-shrink: 0;
   }
-
-  /* テキストは残り幅を使う */
+  
   .profile-text {
     display: flex;
     flex-direction: column;
@@ -247,3 +235,4 @@ background-size: contain; /* or contain */
     line-height: 1.4;
   }
 }
+
