@@ -142,7 +142,7 @@ a:visited {
   .profile-icon{
      max-width: 80px;
      background-repeat: no-repeat;
-background-size: contain; /* or contain */
+     background-size: contain; 
 
   }
 
@@ -150,6 +150,7 @@ background-size: contain; /* or contain */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
   }
 
   .profile-text h1 {
@@ -250,5 +251,6 @@ background-size: contain; /* or contain */
     line-height: 1.4;
   }
 }
+
 
 
