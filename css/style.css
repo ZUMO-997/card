@@ -135,7 +135,6 @@ a:visited {
 
 
 
-/* モバイル微調整 */
 @media (max-width: 360px) {
   .links a:last-child {
     grid-column: 3;
@@ -143,7 +142,23 @@ a:visited {
   .profile-icon{
      max-width: 80px;
      background-repeat: no-repeat;
-     background-size: contain; 
+background-size: contain; /* or contain */
+
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-text h1 {
+    font-size: 1rem;
+  }
+
+  .profile-text p {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }
 
@@ -235,4 +250,5 @@ a:visited {
     line-height: 1.4;
   }
 }
+
 
